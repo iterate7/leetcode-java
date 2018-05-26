@@ -3,16 +3,35 @@ package leetcode;
 /**
  * https://leetcode.com/problems/hamming-distance/description/
  *
+ * hamming-distance:
+ * The Hamming distance between two integers is the number of positions at which 
+ * the corresponding bits are different.
  */
 public class Problem461HammingDistance {
 
+	
+	/**
+	 * alogorthm:
+	 * 1. t = x xor y; t has the all 1 bits, difference.
+	 * 2. count the bit.
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	 public int hammingDistance(int x, int y) {
 		 
 		 return Integer.bitCount(x^y);
 	        
 	    }
 	 
-	 
+	 /**
+	  * algorithm:
+	  * 1. t = x xor y; the hamming distance is the count of 1-bit.
+	  * 2.  xor & (xor-1) to get most-left 1bit.
+	  * @param x
+	  * @param y
+	  * @return
+	  */
 	 public int hammingDistance2(int x, int y) {
 		 
 		 int xor = (x^y);
