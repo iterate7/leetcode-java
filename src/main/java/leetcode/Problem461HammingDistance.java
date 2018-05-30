@@ -1,17 +1,24 @@
 package leetcode;
 
 /**
- * https://leetcode.com/problems/hamming-distance/description/
- *
- * hamming-distance:
+ * problem:
  * The Hamming distance between two integers is the number of positions at which 
  * the corresponding bits are different.
+ * 
+ * link:
+ * https://leetcode.com/problems/hamming-distance/description/
+ * 
+ * solve:
+ * xor, count(bit1)
+ * 
+ * @category bit-manipulation
+ 
  */
 public class Problem461HammingDistance {
 
 	
 	/**
-	 * alogorthm:
+	 * algorithm:
 	 * 1. t = x xor y; t has the all 1 bits, difference.
 	 * 2. count the bit.
 	 * @param x
