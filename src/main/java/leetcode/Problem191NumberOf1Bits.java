@@ -35,10 +35,11 @@ public class Problem191NumberOf1Bits {
 	 * @return
 	 */
 	public static int hammingWeight(int n) {
+		int temp = n;
 		int ones = 0;
-	    	while(n!=0) {
-	    		ones = ones + (n & 1); //(n & 1) = last bit is 0 or 1?
-	    		n = n>>>1; //move right, the most left most be set 0.
+	    	while(temp!=0) {
+	    		ones = ones + (temp & 1); //(n & 1) = last bit is 0 or 1?
+	    		temp = temp>>>1; //move right, the most left most be set 0.
 	    	}
 	    	return ones;
 	}
@@ -52,9 +53,10 @@ public class Problem191NumberOf1Bits {
 	  * @return
 	  */
 	  public int hammingWeight2(int n) {
+		  int temp = n;
 	        int count = 0;
-	        while(n != 0){ //n>0 is wrong
-	            n = n & (n-1);
+	        while(temp != 0){ //n>0 is wrong
+	        	temp = temp & (temp-1);
 	            count++;
 	        }
 	        return count;
