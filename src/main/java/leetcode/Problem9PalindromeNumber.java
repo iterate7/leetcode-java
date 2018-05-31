@@ -38,8 +38,8 @@ public class Problem9PalindromeNumber {
 	public static void main(String[] args) {
 
 		Problem9PalindromeNumber pp = new Problem9PalindromeNumber();
-		int i = 1000021;
-		for (i = 0; i < 1000000; i++) {
+		int k= 1000021;
+		for (int i = 0; i < k; i++) {
 			boolean actual = pp.isPalindromeByReverseInteger(i);
 			boolean value = pp.isPalindromeByTwoPointer(i);
 			if (actual != value || actual)
@@ -61,17 +61,17 @@ public class Problem9PalindromeNumber {
 	 * @return
 	 */
 	public boolean isPalindromeByReverseInteger(int x) {
-		
-		if (x < 0 || (x != 0 && x % radix == 0))
+		int copyX = x;
+		if (copyX < 0 || (copyX != 0 && copyX % radix == 0))
 		{
 			return false;
 		}
 		int sum = 0;
-		while (x > sum) {
-			sum = sum * radix + x % radix;
-			x = x / radix;
+		while (copyX > sum) {
+			sum = sum * radix + copyX % radix;
+			copyX = copyX / radix;
 		}
-		return (x == sum) || (x == sum / radix);
+		return (copyX == sum) || (copyX == sum / radix);
 	}
 
 	/**
@@ -81,6 +81,7 @@ public class Problem9PalindromeNumber {
 	 * @return
 	 */
 	public boolean isPalindromeByTwoPointer(int x) {
+		
 		if (x < 0)
 		{
 			return false;
@@ -89,19 +90,24 @@ public class Problem9PalindromeNumber {
 		{
 			return true;
 		}
+		
+		
 		int leftexp = (int) Math.log10(x);
 		int rightexp = (int) Math.log10(1);
 
+		int copyX = x;
+		
+		
 		/**
 		 * 比如：取1234中的2；那么需要： x(第三位，百位)= x %(10^3) /(10^2)
 		 */
-		while (x > 0) {
+		while (copyX > 0) {
 
 			long leftMod = (long) (Math.pow(10, leftexp));
 			long rightMod = (long) (Math.pow(10, rightexp));
 
-			long right = x / (rightMod) % 10;
-			long left = x / (leftMod) % 10;
+			long right = copyX / (rightMod) % 10;
+			long left = copyX / (leftMod) % 10;
 
 			if (left != right) {
 				return false;
