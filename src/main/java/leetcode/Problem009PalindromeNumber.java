@@ -31,13 +31,13 @@ package leetcode;
  * 
  * @author iterate7
  */
-public class Problem9PalindromeNumber {
+public class Problem009PalindromeNumber {
 	
 	private int radix = 10;
 	
 	public static void main(String[] args) {
 
-		Problem9PalindromeNumber pp = new Problem9PalindromeNumber();
+		Problem009PalindromeNumber pp = new Problem009PalindromeNumber();
 		int k= 1000021;
 		for (int i = 0; i < k; i++) {
 			boolean actual = pp.isPalindromeByReverseInteger(i);
