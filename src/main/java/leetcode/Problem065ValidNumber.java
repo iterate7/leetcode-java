@@ -28,7 +28,7 @@ package leetcode;
  * @date 2018/01/02
  *
  */
-public class Problem65ValidNumber {
+public class Problem065ValidNumber {
 	
 	
 	
