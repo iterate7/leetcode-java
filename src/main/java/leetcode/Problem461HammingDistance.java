@@ -45,7 +45,7 @@ public class Problem461HammingDistance {
 		 
 		   int cnt=0;
 		    while (xor>0) {
-		        cnt ++;
+		        cnt++;
 		        xor=xor&(xor-1);
 		    }
 		    return cnt;
